@@ -1,0 +1,371 @@
+body, html {margin:0;padding:0;overflow:hidden;}
+
+/* Home Page CSS */
+.homePageWrapper, .leftHalfWrapper, .rightHalfWrapper {display:none;height:620px;width:80%;background-image:url('images/2factorbg.jpg');background-size:100% 620px;background-repeat:no-repeat;margin:auto;}
+.icon {color:#FFF;position:relative;}
+.insn {position:absolute;top:100px;left:16px;font-size:18px;}
+.infoIcon .insn	{left:12px;}
+.videoIcon .insn, .homeIcon .insn {left:30px;}
+
+.leftHalfWrapper {display:block;z-index:1000;left:-70%;position:absolute;top:0px;background-position-x:500px;}
+.rightHalfWrapper {display:block;z-index:1000;right:-70%;position:absolute;top:0px;background-position-x:-500px;}
+
+
+.header {display:none;width:200px;height:50px;position:absolute;top:8%;left:42.5%;font-size:31px;text-align:center;color:#575757;font-family:'Bookman Old Style';}
+.leftSideBar {width:10%;height:620px;position:absolute;left:0px;top:0px;background-image:url('images/sideBarbg.jpg');z-index:1001;}
+.rightSideBar {width:10%;height:620px;position:absolute;right:0px;top:0px;background-image:url('images/sideBarbg.jpg');z-index:1001;}
+
+.leftSideBar .gameIcon {display:none;position:absolute;left:10%;top:100px;height:100px;width:80%;
+background-image:url('images/game_button_released.png');background-repeat:no-repeat;
+background-size:90% 90%;background-position:6px 5px;cursor:pointer;border-radius:5px;}
+
+.gameIcon:active {background-image:url('images/game_button_pressed.png')}
+
+.leftSideBar .infoIcon {display:none;position:absolute;left:10%;top:375px;height:100px;width:80%;
+background-image:url('images/information_button_released.png');background-repeat:no-repeat;
+background-size:90% 90%;background-position:6px 5px;cursor:pointer;border-radius:5px;}
+
+.infoIcon:active {background-image:url('images/information_button_pressed.png')}
+.rightSideBar .videoIcon {display:none;position:absolute;right:10%;top:100px;height:100px;width:80%;
+background-image:url('images/play_button_released.png');background-repeat:no-repeat;
+background-size:90% 90%;background-position:6px 5px;cursor:pointer;border-radius:5px;}
+
+.videoIcon:active {background-image:url('images/play_button_pressed.png');}
+
+.rightSideBar .homeIcon {display:none;position:absolute;right:10%;top:375px;height:100px;width:80%;
+background-image:url('images/home_button_released.png');background-repeat:no-repeat;
+background-size:90% 90%;background-position:6px 5px;cursor:pointer;border-radius:5px;}
+.homeIcon:active {background-image:url('images/home_button_pressed.png');}
+/* Game Page CSS */
+.gamePage .gameIcon, .gamePage .infoIcon, .gamePage .videoIcon, .gamePage .homeIcon {display:block;}
+
+.gamePage .wrapper {width:80%;height:613px;margin-left:10%;position:relative;background-image:url("images/infoTile3.jpg");background-size:100% 100%;margin-top:-100px;}
+.gamePage .wrapper h1 {text-align:center;margin-top:100px;padding-top:45px;color:#522A50;font-size:42px;}
+.gamePage .wrapper .cardWrapper {height:250px;width:400px;position:absolute;top:200px;left:75px;}
+.gamePage .wrapper .sherlockCard {height:250px;width:400px;
+	background-image:url('images/sherlock.jpg');background-repeat:no-repeat;border-radius:5px;border:5px solid #4A464A;
+	background-size:100% 100%;}
+.gamePage .wrapper .cardWrapper:hover {cursor:pointer;}
+.gamePage .wrapper .sherlockTitle {font-size:20px;position:absolute;left:180px;bottom:75px;font-size:32px;font-weight:bold;}
+	
+.cardAnim {animation:cardmove 1s;-webkit-animation:cardmove 1s;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+.cardAnimBack {animation:cardbackmove 1s;-webkit-animation:cardbackmove 1s;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;}
+
+.gamePage .wrapper .cardSecondWrapper {height:250px;width:400px;position:absolute;top:200px;left:575px;}	
+.gamePage .wrapper .cardSecondWrapper:hover {cursor:pointer;}
+.gamePage .wrapper .officeCard {height:250px;width:400px;
+	background-image:url('images/theOffice.jpg');background-repeat:no-repeat;border-radius:5px;border:5px solid #4A464A;
+	background-size:100% 100%;}
+.gamePage .wrapper .officeTitle {font-size:20px;position:absolute;left:680px;bottom:75px;font-size:32px;font-weight:bold;}
+
+/* Video Page CSS */
+.videoPage .gameIcon, .videoPage .infoIcon, .videoPage .videoIcon, .videoPage .homeIcon {display:block;}
+.videoPage .wrapper {height:613px;width:80%;background-size:100% 613px;background-repeat:no-repeat;margin:auto;}
+.videoPage .wrapper .videoContainer {width:100px;margin-left:175px;margin-top:75px;height:450px;}
+.videoPage .vjs-big-play-button {top:175px;left:250px;}
+.videoPage .createdBy {height:50px;width:350px;position:absolute;right:100px;font-size:32px;font-weight:bold;}
+/* Google Account Page CSS */
+.googleAccountPage .wrapper {height:613px;width:80%;background-size:100% 613px;background-repeat:no-repeat;margin:auto;
+background-image:url('images/morFace.jpg');background-size:100% 100%;background-repeat:no-repeat;}
+.googleAccountPage .wrapper .gameCanvas {width:300px;height:300px;background-color:transparent;margin:auto;position:absolute;top:150px;left:480px;}
+.googleAccountPage .wrapper .gameCanvas .tile {width:98px;height:98px;float:left;border:1px solid #24191A;background-color:#B6B7BF;border-radius:5px;}
+.googleAccountPage .wrapper .gameCanvas .tile:hover {cursor:pointer;}
+.animTile {animation:tilemove 1.5s;-webkit-animation:tilemove 1.5s; /* Safari and Chrome */}/*#3D59D4*/
+.animCompleteTile {animation:tilecompletemove 0.3s;-webkit-animation:tilecompletemove 0.3s;background-color:transparent !important;/* Safari and Chrome */}
+
+.googleAccountPage .gameIcon, .googleAccountPage .infoIcon, .googleAccountPage .videoIcon, .googleAccountPage .homeIcon {display:block;}
+.googleAccountPage .loseMsg {font-size:38px;position:absolute;left:560px;bottom:40px;display:none;color:red;}
+
+
+.googleAccountPage.userX .wrapper .gameCanvas {width:400px;height:400px;position:absolute;left:450px;top:150px;}
+.googleAccountPage.userX .loseMsg {font-size:38px;position:absolute;left:560px;bottom:40px;display:none;color:red;}
+
+
+
+/* Info Page CSS */
+.infoPage .gameIcon, .infoPage .infoIcon, .infoPage .videoIcon, .infoPage .homeIcon {display:block;}
+
+.infoPage .wrapper {height:1600px;/*background-image:url('images/infoBG.jpg');background-repeat:repeat-y;*/}
+.infoPage .wrapper .infoTile1 {height:315px;width:600px;position:absolute;left:200px;top:50px;
+background-image:url('images/infoTile1.jpg');border-radius:5px;background-size:100% 100%;color:#FFF;}
+.infoPage .wrapper .infoTile1 h1 {text-align:center;width:100%;margin-top:50px;}
+.infoPage .wrapper .infoTile1 .details {margin-left:20px;margin-right:10px;font-size:24px;}
+
+.infoPage .wrapper .infoTile2 {height:315px;width:600px;position:absolute;left:450px;top:450px;
+background-image:url('images/infoTile2.jpg');border-radius:5px;background-size:100% 100%;color:#000;}
+.infoPage .wrapper .infoTile2 .details {margin-left:20px;margin-right:15px;font-size:24px;margin-top:110px;color:#FFF;}
+
+.infoPage .wrapper .infoTile3 {height:315px;width:600px;position:absolute;left:200px;top:850px;
+background-image:url('images/infoTile3.jpg');border-radius:5px;background-size:100% 100%;color:#000;}
+.infoPage .wrapper .infoTile3 h1 {text-align:center;width:100%;margin-top:25px;}
+.infoPage .wrapper .infoTile3 .companyName {width:500px;float:left;margin-left:100px;font-size:28px;font-weight:bold;}
+.infoPage .wrapper .infoTile3 .companyName.rightAlign {margin-right:100px;width:500px;text-align:right;margin-left:0px;}
+
+.infoPage .wrapper .infoTile4 {height:315px;width:600px;position:absolute;left:450px;top:1250px;border-radius:5px;
+background-image:url('images/graph2.png');background-size:100% 100%;color:#000;}
+
+1.infoPage .wrapper .infoTile5 {height:315px;width:600px;position:absolute;left:200px;top:1650px;
+background-image:url('images/graph2.png');border-radius:5px;background-size:100% 100%;color:#000;}
+
+
+/* Find Card Game Page */
+.findCardPage .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.findCardPageUserX .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+
+.findCardPage .gameIcon, .findCardPage .infoIcon, .findCardPage .videoIcon, .findCardPage .homeIcon {display:block;}
+
+.findCardPage .cardImage {display:none;height:196px;width:332px;margin:auto;margin-top:150px;background-image:url('images/Access_card.jpg');}
+
+.findCardPage .picture {display:none;height:100%;width:90%;background-image:url('images/room_easy_to_find.jpg');background-repeat:no-repeat;background-size:100% 100%;}
+
+.findCardPage .timerWrapper {display:none;height:550px;width:50px;position:absolute;right:150px;
+bottom:40px;border-radius:10px;border:2px solid #000;}
+.findCardPage .timer {display:none;height:550px;width:50px;position:absolute;right:0px;background-color:green;
+bottom:0px;border-radius:10px;}
+.findCardPage .timeSeconds {display:none;position:absolute;bottom:5px;right:160px;font-size:30px;font-weight:bold;}
+.timerAnim {animation:timerMove 10s;-webkit-animation:timerMove 10s;animation-fill-mode: forwards;-webkit-animation-fill-mode: forwards;
+-webkit-animation-timing-function: linear;}
+
+.findCardPageUserX .gameIcon, .findCardPageUserX .infoIcon, .findCardPageUserX .videoIcon, .findCardPageUserX .homeIcon {display:block;}
+
+.findCardPageUserX .cardImage {display:none;height:196px;width:332px;margin:auto;margin-top:150px;background-image:url('images/Access_card.jpg');}
+.findCardPageUserX .picture {display:none;height:100%;width:90%;background-image:url('images/room_hard_to_find.jpg');background-repeat:no-repeat;background-size:100% 100%;}
+
+.findCardPageUserX .timerWrapper {display:none;height:550px;width:50px;position:absolute;right:150px;;
+bottom:40px;border-radius:10px;border:2px solid #000;}
+.findCardPageUserX .timer {display:none;height:550px;width:50px;position:absolute;right:0px;background-color:green;
+	bottom:0px;border-radius:10px;}
+.findCardPageUserX .timeSeconds {display:none;position:absolute;bottom:5px;right:160px;font-size:30px;font-weight:bold;}	
+
+/* Card Sucess Page CSS */
+.cardSuccessPage .gameIcon, .cardSuccessPage .infoIcon, .cardSuccessPage .videoIcon, .cardSuccessPage .homeIcon {display:block;}
+.cardSuccessPage .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.cardSuccessPage .wrapper h1 {text-align:center;margin-top:50px;}
+.cardSuccessPage .cardWrapper {width:100%;float:left;}
+.cardSuccessPage .cardImage {height:196px;width:332px;margin-left:100px;float:left;margin-top:100px;background-image:url('images/Access_card.jpg');}
+.cardSuccessPage .newCardImage {height:196px;width:10px;margin-left:50px;margin-top:100px;
+	background-image:url('images/Access_card.jpg');float:left;background-repeat:no-repeat;}
+.cardSuccessPage .arrow	{background-image:url('images/right_arrow.gif');background-size:100% 100%;margin-top:175px;height:50px;width:60px;float:left;margin-left:50px;}
+
+
+.cardSuccessPageUserX .gameIcon, .cardSuccessPage .infoIcon, .cardSuccessPage .videoIcon, .cardSuccessPage .homeIcon {display:block;}
+.cardSuccessPageUserX .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.cardSuccessPageUserX .wrapper h1 {text-align:center;margin-top:50px;}
+.cardSuccessPageUserX .cardWrapper {width:100%;float:left;}
+.cardSuccessPageUserX .cardImage {height:196px;width:332px;margin-left:100px;float:left;margin-top:100px;background-image:url('images/Access_card.jpg');}
+.cardSuccessPageUserX .newCardImage {height:196px;width:10px;margin-left:50px;margin-top:100px;
+	background-image:url('images/Access_card.jpg');float:left;background-repeat:no-repeat;}
+.cardSuccessPageUserX .arrow	{background-image:url('images/right_arrow.gif');background-size:100% 100%;margin-top:175px;height:50px;width:60px;float:left;margin-left:50px;}
+
+/* Office Door Page CSS */
+.officeDoorPage .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.officeDoorPage .gameIcon, .officeDoorPage .infoIcon, .officeDoorPage .videoIcon, .officeDoorPage .homeIcon {display:block;}
+.officeDoorPage .officeDoor {height:593px;width:70%;background-image:url('images/doors_card_reader.jpg');background-size:100% 100%;}
+.officeDoorPage .card {height:100px;width:170px;background-image:url('images/Access_card.jpg');background-size:100% 100%;position:absolute;right:180px;top:220px}
+.officeDoorPage .card:hover {cursor:pointer;}
+.officeDoorPage .instructions {height:60px;width:250px;position:absolute;right:125px;top:175px;font-size:28px;}
+
+
+.officeDoorPageUserX .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.officeDoorPageUserX .gameIcon, .officeDoorPage .infoIcon, .officeDoorPage .videoIcon, .officeDoorPage .homeIcon {display:block;}
+.officeDoorPageUserX .officeDoor {height:593px;width:70%;background-image:url('images/doors_pin_reader.jpg');background-size:100% 100%;}
+
+
+.officeDoorPageUserX .card {height:100px;width:170px;background-image:url('images/Access_card.jpg');background-size:100% 100%;position:absolute;right:180px;top:220px}
+.officeDoorPageUserX .card:hover {cursor:pointer;}
+.officeDoorPageUserX .instructions {height:60px;width:250px;position:absolute;right:125px;top:175px;font-size:28px;}
+
+.officeDoorPageUserX .gameIcon, .officeDoorPageUserX .infoIcon, .officeDoorPageUserX .videoIcon, .officeDoorPageUserX .homeIcon {display:block;}
+
+/* Sherlock Home Page CSS */
+.sherlockHomePage .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/221b.jpg");background-size:100% 100%;margin-top:-100px;}
+.sherlockHomePage .gameIcon, .sherlockHomePage .infoIcon, .sherlockHomePage .videoIcon, .sherlockHomePage .homeIcon {display:block;}
+.sherlockHomePage h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.sherlockHomePage .storyPopUp {position:absolute;left:200px;top:240px;width:880px;height:200px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.sherlockHomePage .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+.sherlockHomePage .storyPopUp .story ul li {line-height:40px;}
+.sherlockHomePage .playButton {color:#FFF;position:absolute;left:525px;bottom:20px;width:170px;height:60px;background-color:gray;border-radius:10px;font-size:30px;padding-top:20px;padding-left:30px;background-image:url('images/infoTile2.jpg');}
+.sherlockHomePage .playButton:hover {cursor:pointer;}
+
+.passwordHacked1 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/221b.jpg");background-size:100% 100%;margin-top:-100px;}
+.passwordHacked1 .gameIcon, .passwordHacked1 .infoIcon, .passwordHacked1 .videoIcon, .passwordHacked1 .homeIcon {display:block;}
+.passwordHacked1 h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.passwordHacked1 .storyPopUp {position:absolute;left:200px;top:140px;width:880px;height:120px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.passwordHacked1 .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+.passwordHacked2 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/221b.jpg");background-size:100% 100%;margin-top:-100px;}
+.passwordHacked2 .gameIcon, .passwordHacked2 .infoIcon, .passwordHacked2 .videoIcon, .passwordHacked2 .homeIcon {display:block;}
+.passwordHacked2 h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.passwordHacked2 .storyPopUp {position:absolute;left:200px;top:140px;width:880px;height:120px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.passwordHacked2 .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+
+.hackMoriarty1 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.hackMoriarty1 .gameIcon, .hackMoriarty1 .infoIcon, .hackMoriarty1 .videoIcon, .hackMoriarty1 .homeIcon {display:block;}
+.hackMoriarty1 h1 {text-align:center;width:100%;margin-top:100px;}
+.hackMoriarty1 .loginDialog {margin-left:350px;height:150px;width:300px;border:2px solid #000;border-radius:5px;}
+.hackMoriarty1 .userNameWrapper {font-size:22px;margin-top:20px;margin-left:20px;}
+.hackMoriarty1 .userNameWrapper input {width:150px;}
+.hackMoriarty1 .passwordWrapper {font-size:22px;margin-top:20px;margin-left:20px;}
+.hackMoriarty1 .passwordWrapper input {width:150px;}
+.hackMoriarty1 .login {margin-left:120px;margin-top:20px;border-radius:2px;font-size:16px;cursor:pointer;}
+
+.hackMoriarty2 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.hackMoriarty2 .gameIcon, .hackMoriarty2 .infoIcon, .hackMoriarty2 .videoIcon, .hackMoriarty2 .homeIcon {display:block;}
+.hackMoriarty2 .gmailHeader {position:absolute;left:44%;width:150px;height:50px;top:20px;
+background-image:url('images/googleLogo.png');background-repeat:no-repeat;background-size:100% 100%;}
+.hackMoriarty2 h1 {text-align:center;width:100%;margin-top:100px;}
+.hackMoriarty2 .loginDialog {margin-left:350px;height:150px;width:300px;border:2px solid #000;border-radius:5px;}
+.hackMoriarty2 .userNameWrapper {font-size:22px;margin-top:20px;margin-left:20px;}
+.hackMoriarty2 .userNameWrapper input {width:150px;}
+.hackMoriarty2 .passwordWrapper {font-size:22px;margin-top:20px;margin-left:20px;}
+.hackMoriarty2 .passwordWrapper input {width:150px;}
+.hackMoriarty2 .login {margin-left:120px;margin-top:20px;border-radius:2px;font-size:16px;cursor:pointer;}
+
+
+.MoriartyHacked1 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/221b.jpg");background-size:100% 100%;margin-top:-100px;}
+.MoriartyHacked1 .gameIcon, .MoriartyHacked1 .infoIcon, .MoriartyHacked1 .videoIcon, .MoriartyHacked1 .homeIcon {display:block;}
+.MoriartyHacked1 h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.MoriartyHacked1 .storyPopUp {position:absolute;left:200px;top:140px;width:880px;height:150px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.MoriartyHacked1 .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+.MoriartyHacked2 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;}
+.MoriartyHacked2 .gameIcon, .MoriartyHacked2 .infoIcon, .MoriartyHacked2 .videoIcon, .MoriartyHacked2 .homeIcon {display:block;}
+.MoriartyHacked2 .twoFactorImg {background-image:url('images/SMS.png');background-repeat:no-repeat;width:800px;height:452px;margin-left:200px;margin-top:50px;}
+.MoriartyHacked2 .moral {position:absolute;top:290px;left:900px;font-size:34px;font-weight:bold;font-style:italic;color:red;}
+
+.sherlockFinal .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/221b.jpg");background-size:100% 100%;margin-top:-100px;}
+.sherlockFinal .gameIcon, .sherlockFinal .infoIcon, .sherlockFinal .videoIcon, .sherlockFinal .homeIcon {display:block;}
+.sherlockFinal h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.sherlockFinal .storyPopUp {position:absolute;left:200px;top:140px;width:880px;height:250px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.sherlockFinal .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+
+/* Office Home Page CSS */
+.officeHomePage .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/officeHomebg.png");background-size:100% 100%;margin-top:-100px;}
+.officeHomePage .gameIcon, .officeHomePage .infoIcon, .officeHomePage .videoIcon, .officeHomePage .homeIcon {display:block;}
+.officeHomePage h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.officeHomePage .storyPopUp {position:absolute;left:200px;top:100px;width:880px;height:400px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.officeHomePage .storyPopUp .managerTitle {position:absolute;top:270px;left:50px;font-size:34px;}
+.officeHomePage .storyPopUp .ceoTitle {position:absolute;top:270px;right:50px;font-size:34px;}
+
+.officeHomePage .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+.officeHomePage .storyPopUp .story .targetTitle {font-weight:bold;margin-left:370px;font-size:36px;}
+.officeHomePage .storyPopUp .story .managerImg {margin-left:190px;}
+.officeHomePage .storyPopUp .story .ceoImg {float:right;margin-right:190px;}
+.officeHomePage .storyPopUp .story ul li {line-height:40px;}
+.officeHomePage .playButton {color:#FFF;position:absolute;left:525px;bottom:20px;width:170px;height:60px;background-color:gray;border-radius:10px;font-size:30px;padding-top:20px;padding-left:30px;background-image:url('images/infoTile2.jpg');}
+.officeHomePage .playButton:hover {cursor:pointer;}
+
+
+.cardFound1 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/officeHomebg.png");background-size:100% 100%;margin-top:-100px;}
+.cardFound1 .gameIcon, .cardFound1 .infoIcon, .cardFound1 .videoIcon, .cardFound1 .homeIcon {display:block;}
+.cardFound1 h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.cardFound1 .storyPopUp {position:absolute;left:200px;top:100px;width:880px;height:100px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.cardFound1 .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+.cardFound2 .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/officeHomebg.png");background-size:100% 100%;margin-top:-100px;}
+.cardFound2 .gameIcon, .cardFound2 .infoIcon, .cardFound2 .videoIcon, .cardFound2 .homeIcon {display:block;}
+.cardFound2 h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.cardFound2 .storyPopUp {position:absolute;left:200px;top:100px;width:880px;height:100px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.cardFound2 .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+.managerHacked .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/officeHomebg.png");background-size:100% 100%;margin-top:-100px;}
+.managerHacked .gameIcon, .managerHacked .infoIcon, .managerHacked .videoIcon, .managerHacked .homeIcon {display:block;}
+.managerHacked h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.managerHacked .storyPopUp {position:absolute;left:200px;top:100px;width:880px;height:150px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.managerHacked .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+.officeFinal .wrapper {height:613px;width:80%;margin:auto;margin-left:10%;background-image:url("images/officeHomebg.png");background-size:100% 100%;margin-top:-100px;}
+.officeFinal .gameIcon, .officeFinal .infoIcon, .officeFinal .videoIcon, .officeFinal .homeIcon {display:block;}
+.officeFinal h1 {text-align:center;width:100%;margin-top:100px;padding-top:50px;color:#FFF;}
+.officeFinal .storyPopUp {position:absolute;left:200px;top:100px;width:880px;height:375px;opacity:0.7;background-color:#FFF;border-radius:5px;}
+.officeFinal .storyPopUp .story {color:#000;padding:15px;font-size:24px;font-family:Comic Sans MS,arial;}
+
+@keyframes tilemove
+{
+0% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+50% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);background-color:transparent;}
+100% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+}
+
+@-webkit-keyframes tilemove /* Safari and Chrome */
+{
+0% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+50% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);background-color:transparent;}
+100% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+}
+
+@keyframes tilecompletemove
+{
+0% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+100% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);background-color:transparent;}
+}
+
+@-webkit-keyframes tilecompletemove /* Safari and Chrome */
+{
+0% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+100% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);background-color:transparent;}
+}
+
+@keyframes timerMove
+{
+0% {height:550px;}
+10% {height:495px;}
+20% {height:440px;}
+30% {height:385px;}
+40% {height:330px;}
+50% {height:275px;background-color:yellow;}
+60% {height:220px;}
+70% {height:165px;}
+80% {height:110px;}
+90% {height:55px;}
+100% {height:0px;background-color:red;}
+}
+
+
+@-webkit-keyframes timerMove /* Safari and Chrome */
+{
+0% {height:550px;}
+10% {height:495px;}
+20% {height:440px;}
+30% {height:385px;}
+40% {height:330px;}
+50% {height:275px;background-color:yellow;}
+60% {height:220px;}
+70% {height:165px;}
+80% {height:110px;}
+90% {height:55px;}
+100% {height:0px;background-color:red;}
+}
+
+@keyframes cardmove
+{
+0% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+50% {transform: rotateY(90deg);-webkit-transform: rotateY(90deg);background-image:url('images/Jimmoriarty.jpg');}
+100% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);background-image:url('images/Jimmoriarty.jpg');}
+}
+
+@-webkit-keyframes cardmove /* Safari and Chrome */
+{
+0% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);}
+50% {transform: rotateY(90deg);-webkit-transform: rotateY(90deg);background-image:url('images/Jimmoriarty.jpg');}
+100% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);background-image:url('images/Jimmoriarty.jpg');}
+}
+
+@keyframes cardbackmove
+{
+0% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
+50% {transform: rotateY(90deg);-webkit-transform: rotateY(90deg);background-image:url('images/sherlock.jpg');}
+100% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);background-image:url('images/sherlock.jpg');}
+}
+
+@-webkit-keyframes cardbackmove /* Safari and Chrome */
+{
+0% {transform: rotateY(180deg);-webkit-transform: rotateY(180deg);}
+50% {transform: rotateY(90deg);-webkit-transform: rotateY(90deg);background-image:url('images/sherlock.jpg');}
+100% {transform: rotateY(0deg);-webkit-transform: rotateY(0deg);background-image:url('images/sherlock.jpg');}
+}
+
+
+
