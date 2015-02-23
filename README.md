@@ -1,4 +1,4 @@
-twoFactorAuthentication
+Two Factor Authentication
 =======================
 
 A story-based game to emphasis two factor authentication.
