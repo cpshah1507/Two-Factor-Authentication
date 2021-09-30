@@ -3,8 +3,13 @@ var tilesRotatedY = 3; // For User with one authentication
 var tilesRotatedX = 6; // For User with two authentication
 var userCorrectGuess = 0;
 
-$(document).ready(function(){
+$(document).ready(function()
+{
+	/////////////////
+	// Home Page code
+	/////////////////
 	$('.homePage .leftHalfWrapper').animate({left:'-30%'},1000);
+
 	$('.homePage .rightHalfWrapper').animate({right:'-30%'},1000,function(){
 		$(this).hide();
 		$('.leftHalfWrapper').hide();
@@ -13,8 +18,9 @@ $(document).ready(function(){
 		$('.header, .gameIcon, .infoIcon, .videoIcon, .homeIcon').fadeIn(1000);
 	});
 	
-	/* Code for Navigation of Icons */
-	$('.icon').click(function(){
+	// Code for Navigation of Icons
+	$('.icon').click(function()
+	{
 		if($('body').hasClass('homePage') && $(this).hasClass('homeIcon'))
 			return true;
 		var thisIcon = $(this);
@@ -48,7 +54,10 @@ $(document).ready(function(){
 		});	
 	});
 	
-	/* For Games Home Page */
+	///////////////////////
+	// Games Home Page code
+	///////////////////////
+
 	if($('body').hasClass('gamePage'))
 	{
 		$(document).mousemove(function(e){
@@ -64,8 +73,12 @@ $(document).ready(function(){
 	$('body.gamePage .cardSecondWrapper').click(function(){
 		window.location.href = "officeHome.html";
 	});
-	
-	/* For Sherlock Home Page */
+
+	//////////////////////
+	// Sherlock Game code
+	//////////////////////
+
+	// Sherlock Home Page
 	$('.sherlockHomePage .playButton').click(function(){
 		$(this).hide();
 		$('.wrapper').css('background-image','url("images/The_Reichenbach_Fall.png")');
@@ -77,20 +90,7 @@ $(document).ready(function(){
 		});
 	});
 
-	/* For Office Page */
-	$('.officeHomePage .playButton').click(function(){
-		$(this).hide();
-		$('.managerTitle, .ceoTitle').hide();
-		$('.story').html('Instructions:<br/><ul><li>Identify the access card</li><li>Click on the same access card in the room.</li><li style="font-weight:bold">You will have 10 seconds to find it!</ul>');
-		//$('.storyPopUp').animate({height:'300px','top':'180px'},1000,function(){
-			setTimeout(function(){
-				window.location.href = "findCard1.html";
-			},3000);
-			//});
-		
-	});
-	/* For Tiles Game */
-	
+	// Tiles Game in Sherlock	
 	if($('body').hasClass('googleAccountPage'))
 	{
 		var tilesAnimated;
@@ -136,6 +136,7 @@ $(document).ready(function(){
 		var isGuessCorrect = false;
 		if($(this).hasClass('animCompleteTile'))
 			return true;
+
 		for(var i=0; i<$('.tile').length;i++)
 		{
 			
@@ -156,28 +157,37 @@ $(document).ready(function(){
 				}
 			}
 		}
-		if(isGuessCorrect == false)
-			//alert('User Lost!');
-			{
-				$('.tile').click(function(){
-					return false;
-				})
-				$('.loseMsg').fadeIn(1000);
-				setTimeout(function(){
-				window.location.href = "sherlockHome.html";
-				},2000);
-			}
+
+		if(isGuessCorrect == false)		
+		{
+			$('.tile').click(function(){
+				return false;
+			})
+			$('.loseMsg').fadeIn(1000);
+			setTimeout(function(){
+			window.location.href = "sherlockHome.html";
+			},2000);
+		}
 	});
 	
-	if($('body').hasClass('infoPage'))
-	{
-		$('html,body').css('overflow','visible');
-		$('.leftSideBar, .rightSideBar').css('position','fixed');
-	}
-	//$('.videoPage .video-js').css('height','400px');
-	
-	/* Script for find thing in picture game */
 
+	
+	
+	////////////////////
+	// Office Game code
+	////////////////////
+
+	// Office Page
+	$('.officeHomePage .playButton').click(function(){
+		$(this).hide();
+		$('.managerTitle, .ceoTitle').hide();
+		$('.story').html('Instructions:<br/><ul><li>Identify the access card</li><li>Click on the same access card in the room.</li><li style="font-weight:bold">You will have 10 seconds to find it!</ul>');		
+		setTimeout(function(){
+			window.location.href = "findCard1.html";
+		},3000);			
+	});
+
+	// Script for find "object in picture" game
 	if($('body').hasClass('findCardPage') || $('body').hasClass('findCardPageUserX'))
 	{
 		$('.cardImage').fadeIn(1000).delay(1000).fadeOut(500,function(){
@@ -187,7 +197,7 @@ $(document).ready(function(){
 				$('.timeSeconds').html(i);
 				i--;
 			}
-			setInterval(function(){
+			let intID = setInterval(function(){
 				if(i >= 0)
 				{
 					$('.timeSeconds').html(i);
@@ -195,7 +205,8 @@ $(document).ready(function(){
 				}	
 				else
 				{
-					alert('You Lose!');
+					clearInterval(intID);
+					alert('You Lose!');					
 					window.location.href="officeHome.html";
 				}
 			},1000);
@@ -205,7 +216,7 @@ $(document).ready(function(){
 
 	}
 	
-	/* Script for finding the Card */
+	// Script for finding the Card
 	$('body.findCardPage .picture').click(function(e){
 		if(e.pageX > 450 && e.pageX < 510 && e.pageY > 510 && e.pageY < 560)
 		{
@@ -213,62 +224,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	if($('body').hasClass('cardFound1'))
-	{
-		setTimeout(function(){
-		window.location.href = "officeDoor1.html";	
-		},3000);
-	}
-	
-	if($('body').hasClass('passwordHacked1'))
-	{
-		setTimeout(function(){
-		window.location.href = "hackMoriarty1.html";	
-		},3000);
-	}
-	
-	if($('body').hasClass('cardFound2'))
-	{
-		setTimeout(function(){
-		window.location.href = "officeDoor2.html";	
-		},3000);
-	}
-	
-	if($('body').hasClass('passwordHacked2'))
-	{
-		setTimeout(function(){
-		window.location.href = "hackMoriarty2.html";	
-		},3000);
-	}
-	
-	
-	$('body.findCardPageUserX .picture').click(function(e){
-		if(e.pageX > 235 && e.pageX < 285 && e.pageY > 590 && e.pageY < 605)
-			window.location.href = "cardSuccess2.html";
-	});
-	
-	/* Script for Card Sucess */
-	if($('body').hasClass('cardSuccessPage'))
-	{
-		$('.newCardImage').animate({width:'332px'},3000,function(){
-			window.location.href= "cardFound1.html";
-		});
-	}
-	if($('body').hasClass('cardSuccessPageUserX'))
-	{
-		$('.newCardImage').animate({width:'332px'},3000,function(){
-			window.location.href= "cardFound2.html";
-		});
-		
-	}
-	if($('body').hasClass('managerHacked'))
-	{
-		setTimeout(function(){
-				window.location.href= "findCard2.html";
-		},2000);
-	}
-	
-	/* Script for Office Page */
+	// Script for Office Page
 	if($('body').hasClass('officeDoorPage') || $('body').hasClass('officeDoorPageUserX'))
 	{
 		$("#draggable").draggable({drag:function(){
@@ -297,29 +253,59 @@ $(document).ready(function(){
 			}
 		});
 	}
-	
-	$('.hackMoriarty1 .login').click(function(){
+
+	/////////////////////////
+	// Page Redirection code
+	/////////////////////////
+	let pageRoutes = {
+		'passwordHacked1' : 'hackMoriarty1.html',		
+		'passwordHacked2' : 'hackMoriarty2.html',
+		'managerHacked' : 'findCard2.html',
+		'MoriartyHacked1' : 'sherlock2.html',
+		'MoriartyHacked2' : 'sherlockFinal.html',
+		'cardFound1' : 'officeDoor1.html',
+		'cardFound2' : 'officeDoor2.html',
+	}
+
+	for (var cname in pageRoutes)
+	{
+		if($('body').hasClass(cname))
+		{
+			console.log("cbane:" + $('body')[0].classList);	
+			setTimeout(function(){
+					window.location.href= pageRoutes[$('body')[0].classList[0]];
+			},2000);
+		}
+	}
+
+	$('.hackMoriarty1 .login').click(function(){						
 		window.location.href= "MoriartyHacked1.html";
 	});
-	
-	$('.hackMoriarty2 .login').click(function(){
+
+	$('.hackMoriarty2 .login').click(function(){						
 		window.location.href= "MoriartyHacked2.html";
 	});
+
+	$('body.findCardPageUserX .picture').click(function(e){
+		if(e.pageX > 235 && e.pageX < 285 && e.pageY > 590 && e.pageY < 605)
+			window.location.href = "cardSuccess2.html";
+	});
 	
-	
-	if($('body').hasClass('MoriartyHacked1'))
+	if($('body').hasClass('cardSuccessPage'))
 	{
-		setTimeout(function(){
-				window.location.href= "sherlock2.html";
-		},3000);
+		$('.newCardImage').animate({width:'332px'},3000,function(){
+			window.location.href= "cardFound1.html";
+		});
 	}
-	
-	if($('body').hasClass('MoriartyHacked2'))
+	if($('body').hasClass('cardSuccessPageUserX'))
 	{
-		setTimeout(function(){
-				window.location.href= "sherlockFinal.html";
-		},3000);
+		$('.newCardImage').animate({width:'332px'},3000,function(){
+			window.location.href= "cardFound2.html";
+		});	
 	}
-	
-	
+	if($('body').hasClass('infoPage'))
+	{
+		$('html,body').css('overflow','visible');
+		$('.leftSideBar, .rightSideBar').css('position','fixed');
+	}
 });

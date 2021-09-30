@@ -45,11 +45,9 @@ var setEventHandlers = function() {
 };
 
 function onBoxSelected(data)
-{
-	//alert("data is: " + data.selectedBox);
+{	
 	$('p').html(data.selectedBox);
 }
-
 
 // Socket connected
 function onSocketConnected() {
